@@ -1,18 +1,21 @@
-//functions... maybe they don't belong here
+
 
 Automaton ben = new Automaton();
 
 void setup() {
-  size(720, 800);
-  String word = "1234";
-  int[] x = new int[4];
-  for (int i=0; i<word.length(); i++) {
-    x[i] = Integer.parseInt(str(word.charAt(i)));
-  }
-  println(x);
-  
+  size(1440, 800);
+  background(255);
+
 }
 
 void draw() {
+  ben.update();
+  ben.display();
+  fill(255);
+  noStroke();
+  rect(0, height-20, width, height);
+}
 
+void keyPressed() {
+  ben.next();
 }
